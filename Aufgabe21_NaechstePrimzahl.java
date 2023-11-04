@@ -9,7 +9,7 @@ public class Aufgabe21_NaechstePrimzahl {
 		
 	}
 	public static void Version1() {
-		int zahl = 5;
+		int zahl = 7;
 		//int zahl = sc.nextint();
 		int teiler = 0;
 		boolean primzahl =false;
@@ -18,12 +18,12 @@ public class Aufgabe21_NaechstePrimzahl {
 		teiler = 2;
 		primzahl = true;
 		
-		while(primzahl == true && teiler <= Math.sqrt(zahl)){
+		do{
 			if(zahl%teiler == 0) {
 				primzahl = false;
-				teiler+= 1;
 			}
-		}
+				teiler+= 1;
+		}while(primzahl == true && teiler <= Math.sqrt(zahl));
 		System.out.println("Zahl: " + zahl);
 	}
 	
