@@ -9,32 +9,46 @@ public class Aufgabe21_NaechstePrimzahl {
 		
 	}
 	public static void Version1() {
-		int zahl = 7;
-		//int zahl = sc.nextint();
+		//int zahl = 7;
+		int zahl = sc.nextInt();
 		int teiler = 0;
 		boolean primzahl =false;
 		
-		zahl += 1;
-		teiler = 2;
-		primzahl = true;
 		
-		do{
-			if(zahl%teiler == 0) {
-				primzahl = false;
-			}
-				teiler+= 1;
-		}while(primzahl == true && teiler <= Math.sqrt(zahl));
-		System.out.println("Zahl: " + zahl);
+		
+		
+		if(zahl > 2) {
+			do {
+				zahl += 1;
+				teiler = 2;
+				primzahl = true;	
+					do{
+						if(zahl%teiler == 0) {
+							primzahl = false;
+						}
+							teiler+= 1;
+					}while(primzahl == true && teiler <= Math.sqrt(zahl));		
+			}while(!primzahl);
+			System.out.println("nächste Primzahl : " + zahl);
+		}else if(zahl == 2)	{
+			primzahl = true;
+			System.out.println(zahl + " ist Primzahl");
+
+		}else {
+			primzahl = false;
+			System.out.println(zahl + " ist keine Primzahl");
+
+		}
 	}
-	
-	
-	//Version 2
-	public static void Version2() {
-		System.out.print("Geben Sie eine Zahl ein: ");
-	    int zahl = sc.nextInt();
-	
-	    int naechstePrimzahl = findNaechstePrimzahl(zahl);
-	    System.out.println("Die naechste Primzahl nach " + zahl + " ist " + naechstePrimzahl);
+		
+		
+		//Version 2
+		public static void Version2() {
+			System.out.print("Geben Sie eine Zahl ein: ");
+		    int zahl = sc.nextInt();
+		
+		    int naechstePrimzahl = findNaechstePrimzahl(zahl);
+		    System.out.println("Die naechste Primzahl nach " + zahl + " ist " + naechstePrimzahl);
 	}
 	
 	public static boolean istPrimzahl(int zahl) {
